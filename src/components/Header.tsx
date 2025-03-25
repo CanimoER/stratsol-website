@@ -12,6 +12,7 @@ import {
   NavigationMenuTrigger,
 } from "./ui/navigation-menu";
 import { cn } from "../lib/utils";
+import { Link } from "react-router-dom";
 
 interface HeaderProps {
   logo?: string;
@@ -31,12 +32,20 @@ const Header = ({
   logo = "Stratsol",
   menuItems = [
     {
-      title: "Services",
-      href: "#services",
+      title: "Home",
+      href: "/",
+    },
+    {
+      title: "Projects",
+      href: "/projects",
     },
     {
       title: "About",
       href: "/about",
+    },
+    {
+      title: "Services",
+      href: "#services",
     },
     {
       title: "Testimonials",
@@ -72,22 +81,22 @@ const Header = ({
   );
 
   return (
-    <header className="w-full h-20 bg-white border-b border-gray-200 fixed top-0 z-50">
+    <header className="w-full h-20 bg-[#0A0A0A] border-b border-white/10 fixed top-0 z-50">
       {/* Mobile Menu */}
       <div className="md:hidden absolute left-4 top-1/2 -translate-y-1/2">
         <Sheet>
           <SheetTrigger asChild>
-            <Button variant="ghost" size="icon">
+            <Button variant="ghost" size="icon" className="text-white hover:text-purple-400">
               <Menu className="h-6 w-6" />
             </Button>
           </SheetTrigger>
-          <SheetContent side="left" className="w-[300px] sm:w-[400px]">
+          <SheetContent side="left" className="w-[300px] sm:w-[400px] bg-[#0A0A0A] border-white/10">
             <nav className="flex flex-col gap-4">
               {menuItems.map((item) => (
                 <a
                   key={item.title}
                   href={item.href}
-                  className="block px-2 py-1 text-lg"
+                  className="block px-2 py-1 text-lg text-white hover:text-purple-400 transition-colors"
                   onClick={(e) => {
                     e.preventDefault();
                     handleNavigation(item.href);
@@ -102,9 +111,13 @@ const Header = ({
       </div>
       <div className="container mx-auto h-full px-4 flex items-center justify-between">
         <div className="flex items-center">
-          <a href="/" className="text-2xl font-bold text-primary">
-            {logo}
-          </a>
+          <Link to="/" className="flex items-center">
+            <img 
+              src="/images/Stratsol rl.png" 
+              alt="Stratsol Inc." 
+              className="h-12 w-auto object-contain"
+            />
+          </Link>
         </div>
 
         <NavigationMenu className="hidden md:block">
@@ -112,11 +125,11 @@ const Header = ({
             {menuItems.map((item) => (
               <NavigationMenuItem key={item.title}>
                 {item.items ? (
-                  <NavigationMenuTrigger>{item.title}</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="text-white">{item.title}</NavigationMenuTrigger>
                 ) : (
                   <NavigationMenuLink
                     className={cn(
-                      "group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50",
+                      "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:text-purple-400 text-white focus:text-purple-400 focus:outline-none disabled:pointer-events-none disabled:opacity-50",
                     )}
                     href={item.href}
                     onClick={(e) => {
@@ -156,10 +169,11 @@ const Header = ({
           </NavigationMenuList>
         </NavigationMenu>
 
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-6">
           <Button
             variant="default"
             size="lg"
+            className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white"
             onClick={() => {
               const currentPath = window.location.pathname;
               if (isHomePage(currentPath)) {

@@ -1,0 +1,32 @@
+Please add the following images in this directory with these names:
+- legal-advisory.jpeg
+- strategic-planning.jpeg
+- case-management.jpeg
+- traffic-safety.jpeg
+- recovery-hub.jpeg
+- ogp-consultancy.jpeg
+- guayama-assessment.jpeg
+- childcare-plan.jpeg
+- head-start-study.jpeg
+- mental-health-observatory.jpeg
+- childcare-needs.jpeg
+- childcare-gap.jpeg
+- recovery-impact.jpeg
+
+Each image should be in 16:9 aspect ratio (800x450 pixels recommended) and represent the respective project theme. 
+
+IMAGES NEEDED:
+
+NEW IMAGES TO ADD:
+1. childcare-needs.jpeg - For "Child Care Program Needs Assessment Study"
+2. childcare-gap.jpeg - For "Child Care Services Gap Analysis"
+3. recovery-impact.jpeg - For "Early Childhood Recovery Programs Impact Report"
+
+Image Requirements:
+- Format: JPEG
+- Aspect ratio: 16:9
+- Recommended size: 800x450 pixels
+- File size: Keep under 1MB if possible
+- Name must match exactly as shown above (case-sensitive)
+
+Place all images in this directory (public/projects/) 

@@ -12,8 +12,8 @@ interface HeroSectionProps {
 }
 
 const HeroSection = ({
-  title = "Strategic Planning for Your Business Success",
-  subtitle = "Transform your business with data-driven strategies and expert consultation tailored to your goals.",
+  title = "Strategic Solutions for Puerto Rico's Future",
+  subtitle = "A distinguished multidisciplinary consulting firm delivering data-driven strategies and expert consultation since 2016.",
   backgroundImage = "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80",
   ctaText = "Get Started",
   onCtaClick = () => {
@@ -31,11 +31,11 @@ const HeroSection = ({
             scale: [1, 1.2, 1],
           }}
           transition={{
-            duration: 20,
+            duration: 80,
             repeat: Infinity,
             ease: "linear",
           }}
-          className="absolute -right-1/4 -top-1/4 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-purple-500/20 to-transparent"
+          className="absolute right-[15%] top-[15%] w-[30vw] h-[30vw] max-w-[400px] max-h-[400px] min-w-[250px] min-h-[250px] border-[30px] border-[#dfa628]/50 bg-transparent"
         />
         <motion.div
           animate={{
@@ -43,11 +43,11 @@ const HeroSection = ({
             scale: [1, 1.3, 1],
           }}
           transition={{
-            duration: 25,
+            duration: 150,
             repeat: Infinity,
             ease: "linear",
           }}
-          className="absolute -left-1/4 -bottom-1/4 w-[400px] h-[400px] rounded-full bg-gradient-to-tr from-blue-500/20 to-transparent"
+          className="absolute left-[10%] bottom-[20%] w-[25vw] h-[25vw] max-w-[300px] max-h-[300px] min-w-[200px] min-h-[200px] border-[30px] border-[#1e69ad]/50 bg-transparent"
         />
       </div>
 
@@ -101,22 +101,22 @@ const HeroSection = ({
               y: ["-10px", "10px"],
             }}
             transition={{
-              duration: 2,
+              duration: 4,
               repeat: Infinity,
               repeatType: "reverse",
             }}
-            className="absolute -top-8 -right-8 w-20 h-20 bg-purple-500/20 rounded-full backdrop-blur-xl border border-white/10"
+            className="absolute -top-8 -right-8 w-[8vw] h-[8vw] max-w-[64px] max-h-[64px] min-w-[40px] min-h-[40px] border-[7px] border-[#dfa628]/50 bg-transparent backdrop-blur-sm"
           />
           <motion.div
             animate={{
               y: ["10px", "-10px"],
             }}
             transition={{
-              duration: 2.5,
+              duration: 5,
               repeat: Infinity,
               repeatType: "reverse",
             }}
-            className="absolute -bottom-8 -left-8 w-16 h-16 bg-blue-500/20 rounded-full backdrop-blur-xl border border-white/10"
+            className="absolute -bottom-8 -left-8 w-[6vw] h-[6vw] max-w-[48px] max-h-[48px] min-w-[32px] min-h-[32px] border-[7px] border-[#1e69ad]/50 bg-transparent backdrop-blur-sm"
           />
         </motion.div>
       </div>

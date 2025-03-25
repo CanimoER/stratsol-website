@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Star, Quote } from "lucide-react";
+import { Star } from "lucide-react";
 
 interface Testimonial {
   id: number;
@@ -8,7 +8,7 @@ interface Testimonial {
   role: string;
   company: string;
   content: string;
-  avatar: string;
+  logo: string;
   rating: number;
 }
 
@@ -19,34 +19,31 @@ interface TestimonialsSectionProps {
 const defaultTestimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Sarah Johnson",
-    role: "CEO",
-    company: "Tech Innovations Ltd",
-    content:
-      "Stratsol transformed our business strategy. Their insights were invaluable to our growth.",
-    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=sarah",
+    name: "María Rivera",
+    role: "Director",
+    company: "ACUDEN",
+    content: "StratSol ha sido instrumental en la transformación de nuestros programas de cuidado infantil. Su análisis detallado y recomendaciones estratégicas han mejorado significativamente nuestros servicios.",
+    logo: "/images/logos/futuro-logo.png",
     rating: 5,
   },
   {
     id: 2,
-    name: "Michael Chen",
-    role: "Director",
-    company: "Global Solutions Inc",
-    content:
-      "The strategic planning services provided by Stratsol exceeded our expectations.",
-    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=michael",
+    name: "Carlos Rodríguez",
+    role: "Executive Director",
+    company: "Comisión para la Seguridad en el Tránsito",
+    content: "The traffic safety survey study conducted by StratSol provided invaluable insights for our campaigns. Their data-driven approach and thorough analysis exceeded our expectations.",
+    logo: "/images/logos/cst-logo.png",
     rating: 5,
   },
   {
     id: 3,
-    name: "Emily Rodriguez",
-    role: "Founder",
-    company: "StartUp Success",
-    content:
-      "Working with Stratsol was a game-changer for our startup. Highly recommended!",
-    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=emily",
+    name: "Ana Méndez",
+    role: "Program Manager",
+    company: "Head Start Program",
+    content: "El estudio de necesidades comunitarias realizado por StratSol nos permitió identificar áreas críticas de mejora y optimizar la distribución de recursos para mejor servir a nuestras comunidades.",
+    logo: "/images/logos/head-start-logo.png",
     rating: 5,
-  },
+  }
 ];
 
 const TestimonialsSection = ({
@@ -62,26 +59,24 @@ const TestimonialsSection = ({
             scale: [1, 1.2, 1],
           }}
           transition={{
-            duration: 20,
+            duration: 180,
             repeat: Infinity,
             ease: "linear",
           }}
-          className="absolute -right-1/4 bottom-0 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-purple-500/10 to-transparent"
+          className="absolute right-[20%] top-[20%] w-[25vw] h-[25vw] max-w-[300px] max-h-[300px] min-w-[200px] min-h-[200px] border-[30px] border-[#dfa628]/20 bg-transparent"
         />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4">
+      <div className="relative max-w-7xl mx-auto px-4 z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-white mb-6">
-            What Our Clients Say
-          </h2>
+          <h2 className="text-4xl font-bold text-white mb-6">What Our Clients Say</h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Discover how we've helped businesses achieve their strategic goals
+            Hear from organizations we've helped transform through strategic planning and data-driven solutions.
           </p>
         </motion.div>
 
@@ -94,40 +89,38 @@ const TestimonialsSection = ({
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="relative group"
             >
-              {/* Glowing background */}
               <div className="absolute -inset-2 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-xl opacity-0 group-hover:opacity-100 blur-lg transition-opacity duration-500" />
-
-              {/* Card content */}
               <div className="relative p-8 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm">
-                <Quote className="w-10 h-10 text-purple-500 mb-6" />
-
-                <p className="text-gray-300 mb-6 leading-relaxed">
-                  {testimonial.content}
-                </p>
-
-                <div className="flex items-center gap-4">
+                {/* Organization Logo */}
+                <div className="h-16 mb-6 flex items-center justify-center">
                   <img
-                    src={testimonial.avatar}
-                    alt={testimonial.name}
-                    className="w-12 h-12 rounded-full border-2 border-purple-500"
+                    src={testimonial.logo}
+                    alt={`${testimonial.company} logo`}
+                    className="max-h-full w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
                   />
-                  <div>
-                    <h3 className="font-semibold text-white">
-                      {testimonial.name}
-                    </h3>
-                    <p className="text-sm text-gray-400">
-                      {testimonial.role} at {testimonial.company}
-                    </p>
-                  </div>
                 </div>
-
-                <div className="flex gap-1 mt-4">
-                  {Array.from({ length: testimonial.rating }).map((_, i) => (
+                
+                {/* Rating */}
+                <div className="flex justify-center mb-6">
+                  {[...Array(testimonial.rating)].map((_, i) => (
                     <Star
                       key={i}
-                      className="h-4 w-4 fill-purple-500 text-purple-500"
+                      className="w-5 h-5 text-yellow-500 fill-current"
                     />
                   ))}
+                </div>
+
+                {/* Content */}
+                <blockquote className="text-gray-400 text-center mb-6">
+                  "{testimonial.content}"
+                </blockquote>
+
+                {/* Author */}
+                <div className="text-center">
+                  <div className="font-semibold text-white">{testimonial.name}</div>
+                  <div className="text-sm text-gray-400">
+                    {testimonial.role} at {testimonial.company}
+                  </div>
                 </div>
               </div>
             </motion.div>

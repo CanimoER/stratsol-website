@@ -9,7 +9,11 @@
     "build-no-errors": "tsc ; vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "types:supabase": "npx supabase gen types typescript --project-id $SUPABASE_PROJECT_ID > src/types/supabase.ts"
+    "types:supabase": "npx supabase gen types typescript --project-id $SUPABASE_PROJECT_ID > src/types/supabase.ts",
+    "security-check": "npm audit --production",
+    "security-fix": "npm audit fix --production",
+    "deps-check": "npx npm-check-updates --target production",
+    "deps-update": "npx npm-check-updates --target production -u && npm install"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.6.0",
@@ -67,6 +71,7 @@
     "@types/react-dom": "^18.2.22",
     "@vitejs/plugin-react-swc": "3.5.0",
     "autoprefixer": "^10.4.19",
+    "npm-check-updates": "17.1.16",
     "postcss": "^8.4.38",
     "tailwindcss": "3.4.1",
     "tempo-devtools": "^2.0.94",

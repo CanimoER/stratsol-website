@@ -1,0 +1,53 @@
+name: Dependency Security Check
+
+on:
+  schedule:
+    - cron: '0 0 * * 1'  # Run every Monday at midnight
+  push:
+    branches: [ main ]
+    paths:
+      - 'package.json'
+      - 'package-lock.json'
+      - 'npm-shrinkwrap.json'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'package.json'
+      - 'package-lock.json'
+      - 'npm-shrinkwrap.json'
+  workflow_dispatch:  # Allow manual triggers
+
+jobs:
+  security-audit:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+      
+      - name: Run security audit
+        run: npm audit --audit-level=moderate
+        continue-on-error: true
+      
+      - name: Check outdated dependencies
+        run: npx npm-check-updates
+        continue-on-error: true
+      
+      - name: Generate Dependency Report
+        run: |
+          echo "::group::Dependency Report"
+          npm list --prod --depth=0
+          echo "::endgroup::"
+      
+      - name: Notify on high severity vulnerabilities
+        if: ${{ failure() }}
+        run: |
+          echo "::warning::High severity vulnerabilities found in dependencies. Check the logs for details." 

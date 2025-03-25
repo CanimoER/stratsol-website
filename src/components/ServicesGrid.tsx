@@ -48,27 +48,27 @@ const ServicesGrid = ({ services }: ServicesGridProps) => {
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
           animate={{
-            rotate: -360,
+            rotate: 360,
             scale: [1, 1.2, 1],
           }}
           transition={{
-            duration: 25,
+            duration: 120,
             repeat: Infinity,
             ease: "linear",
           }}
-          className="absolute right-0 top-1/3 w-[400px] h-[400px] rounded-full bg-gradient-to-br from-purple-500/10 to-transparent"
+          className="absolute right-[10%] top-[20%] w-[30vw] h-[30vw] max-w-[400px] max-h-[400px] min-w-[250px] min-h-[250px] border-[30px] border-[#62368a]/50 bg-transparent"
         />
         <motion.div
           animate={{
-            rotate: 360,
+            rotate: -360,
             scale: [1, 1.3, 1],
           }}
           transition={{
-            duration: 30,
+            duration: 100,
             repeat: Infinity,
             ease: "linear",
           }}
-          className="absolute -left-1/4 bottom-0 w-[500px] h-[500px] rounded-full bg-gradient-to-tr from-blue-500/10 to-transparent"
+          className="absolute left-[10%] bottom-[20%] w-[25vw] h-[25vw] max-w-[300px] max-h-[300px] min-w-[200px] min-h-[200px] border-[30px] border-[#348a92]/50 bg-transparent"
         />
       </div>
 

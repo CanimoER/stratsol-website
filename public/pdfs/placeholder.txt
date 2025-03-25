@@ -1,0 +1,13 @@
+Please add the following PDF files in this directory with these names:
+- ACUDEN_Legal_Advisory.pdf
+- ACUDEN_Strategic_Planning.pdf
+- ACUDEN_PECC_Case_Management.pdf
+- CST_Traffic_Safety_Survey.pdf
+- ACUDEN_Recovery_Hub_Evaluation.pdf
+- 1430_2025-000027_SSC.pdf
+- 4030_2025-000292_SSC.pdf
+- 2251_2025-000446_SSC.pdf
+- 2251_2025-000479_SSC.pdf
+- 2245_2025-951785_SSC.pdf
+
+Each PDF should contain the detailed case study for the respective project. 

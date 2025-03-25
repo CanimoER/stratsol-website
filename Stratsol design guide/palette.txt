@@ -1,0 +1,14 @@
+/* Coolors Exported Palette - https://coolors.co/dfa628-535353-62368a-000000-348a92-1e69ad-fcfcfc */
+
+
+
+#dfa628, #62368a, #348a92, #1e69ad,
+
+
+
+<palette>
+  <color name="Goldenrod" hex="dfa628" r="223" g="166" b="40" />
+  <color name="Rebecca purple" hex="62368a" r="98" g="54" b="138" />
+  <color name="Dark cyan" hex="348a92" r="52" g="138" b="146" />
+  <color name="Green Blue" hex="1e69ad" r="30" g="105" b="173" />
+</palette>
