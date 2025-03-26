@@ -192,7 +192,7 @@ const AboutPage = () => {
                       Senior Principal Consultant
                     </div>
                     <img 
-                      src="/images/josue.png" 
+                      src="/images/josue.jpg" 
                       alt="Lcdo. Josué Jiménez López"
                       className="w-full h-full object-cover object-center"
                       loading="lazy"
