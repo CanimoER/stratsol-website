@@ -35,7 +35,7 @@ const HeroSection = ({
             repeat: Infinity,
             ease: "linear",
           }}
-          className="absolute right-[15%] top-[15%] w-[30vw] h-[30vw] max-w-[400px] max-h-[400px] min-w-[250px] min-h-[250px] border-[30px] border-[#dfa628]/50 bg-transparent"
+          className="absolute right-[15%] top-[15%] w-[min(30vw,500px)] h-[min(30vw,500px)] min-w-[250px] min-h-[250px] border-[min(30px,4vw)] border-[#dfa628]/50 bg-transparent"
         />
         <motion.div
           animate={{
@@ -47,7 +47,7 @@ const HeroSection = ({
             repeat: Infinity,
             ease: "linear",
           }}
-          className="absolute left-[10%] bottom-[20%] w-[25vw] h-[25vw] max-w-[300px] max-h-[300px] min-w-[200px] min-h-[200px] border-[30px] border-[#1e69ad]/50 bg-transparent"
+          className="absolute left-[10%] bottom-[20%] w-[min(25vw,400px)] h-[min(25vw,400px)] min-w-[200px] min-h-[200px] border-[min(30px,3vw)] border-[#1e69ad]/50 bg-transparent"
         />
       </div>
 
@@ -105,7 +105,7 @@ const HeroSection = ({
               repeat: Infinity,
               repeatType: "reverse",
             }}
-            className="absolute -top-8 -right-8 w-[8vw] h-[8vw] max-w-[64px] max-h-[64px] min-w-[40px] min-h-[40px] border-[7px] border-[#dfa628]/50 bg-transparent backdrop-blur-sm"
+            className="absolute -top-8 -right-8 w-[min(8vw,100px)] h-[min(8vw,100px)] min-w-[40px] min-h-[40px] border-[min(7px,1vw)] border-[#dfa628]/50 bg-transparent backdrop-blur-sm"
           />
           <motion.div
             animate={{
@@ -116,7 +116,7 @@ const HeroSection = ({
               repeat: Infinity,
               repeatType: "reverse",
             }}
-            className="absolute -bottom-8 -left-8 w-[6vw] h-[6vw] max-w-[48px] max-h-[48px] min-w-[32px] min-h-[32px] border-[7px] border-[#1e69ad]/50 bg-transparent backdrop-blur-sm"
+            className="absolute -bottom-8 -left-8 w-[min(6vw,80px)] h-[min(6vw,80px)] min-w-[32px] min-h-[32px] border-[min(7px,1vw)] border-[#1e69ad]/50 bg-transparent backdrop-blur-sm"
           />
         </motion.div>
       </div>

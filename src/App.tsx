@@ -6,12 +6,14 @@ import AboutPage from "./components/AboutPage";
 import ProjectsPage from "./components/ProjectsPage";
 import { LoadingSpinner } from "./components/ui/loading-spinner";
 import ErrorBoundary from "./components/ui/ErrorBoundary";
+import ScrollToTop from "./components/ScrollToTop";
 import routes from "tempo-routes";
 
 function App() {
   return (
     <Suspense fallback={<LoadingSpinner />}>
       <>
+        <ScrollToTop />
         <ErrorBoundary>
           <Routes>
             <Route path="/" element={<Home />} />
