@@ -23,10 +23,35 @@ const Header = () => {
     setIsOpen(false);
   }, [location]);
 
+  const handleNavigation = (targetId: string) => {
+    // If we're not on the home page, store the target and navigate home
+    if (location.pathname !== "/") {
+      sessionStorage.setItem("scrollTarget", targetId);
+      return;
+    }
+
+    // If we're on the home page, scroll to the target
+    const element = document.getElementById(targetId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+    setIsOpen(false);
+  };
+
   const menuItems = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
     { href: "/projects", label: "Projects" },
+    { 
+      href: "#testimonials", 
+      label: "Testimonials",
+      onClick: () => handleNavigation("testimonials")
+    },
+    { 
+      href: "#contact-section", 
+      label: "Contact Us",
+      onClick: () => handleNavigation("contact-section")
+    }
   ];
 
   const headerClasses = cn(
@@ -64,6 +89,7 @@ const Header = () => {
                 key={item.href}
                 to={item.href}
                 className={linkClasses}
+                onClick={item.onClick}
               >
                 {item.label}
               </Link>
@@ -96,7 +122,7 @@ const Header = () => {
                     key={item.href}
                     to={item.href}
                     className={cn(linkClasses, "text-center py-2")}
-                    onClick={() => setIsOpen(false)}
+                    onClick={item.onClick || (() => setIsOpen(false))}
                   >
                     {item.label}
                   </Link>
