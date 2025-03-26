@@ -26,12 +26,12 @@ const AboutPage = () => {
       {/* Floating Squares that follow scroll */}
       <motion.div
         style={{ y: leftSquareY }}
-        className="fixed left-4 top-1/4 w-[15vw] h-[15vw] max-w-[200px] max-h-[200px] min-w-[100px] min-h-[100px] border-[30px] border-[#dfa628]/20 pointer-events-none"
+        className="fixed left-4 top-1/4 w-[10vw] h-[10vw] sm:w-[15vw] sm:h-[15vw] max-w-[200px] max-h-[200px] min-w-[60px] min-h-[60px] border-[15px] sm:border-[30px] border-[#dfa628]/20 pointer-events-none"
         aria-hidden="true"
       />
       <motion.div
         style={{ y: rightSquareY }}
-        className="fixed right-4 top-1/3 w-[12vw] h-[12vw] max-w-[150px] max-h-[150px] min-w-[80px] min-h-[80px] border-[30px] border-[#348a92]/20 pointer-events-none"
+        className="fixed right-4 top-1/3 w-[8vw] h-[8vw] sm:w-[12vw] sm:h-[12vw] max-w-[150px] max-h-[150px] min-w-[40px] min-h-[40px] border-[12px] sm:border-[30px] border-[#348a92]/20 pointer-events-none"
         aria-hidden="true"
       />
 
@@ -86,10 +86,10 @@ const AboutPage = () => {
               >
                 <div className="absolute -inset-2 bg-gradient-to-r from-purple-500/30 to-blue-500/30 rounded-xl opacity-75 group-hover:opacity-100 blur-lg transition-opacity duration-500" />
                 <div className="relative p-8 rounded-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 shadow-xl">
-                  <div className="absolute -top-5 -left-5 w-16 h-16 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 flex items-center justify-center shadow-lg">
-                    <Award className="w-8 h-8 text-white" />
+                  <div className="absolute sm:-top-5 sm:-left-5 top-2 left-2 w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 flex items-center justify-center shadow-lg">
+                    <Award className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                   </div>
-                  <h2 className="text-2xl font-bold text-white mb-4 pl-10">
+                  <h2 className="text-2xl font-bold text-white mb-4 pl-4 sm:pl-10">
                     Our Mission
                   </h2>
                   <p className="text-gray-300 text-base leading-relaxed">
@@ -113,8 +113,8 @@ const AboutPage = () => {
               >
                 <div className="absolute -inset-2 bg-gradient-to-r from-blue-500/30 to-[#dfa628]/30 rounded-xl opacity-75 group-hover:opacity-100 blur-lg transition-opacity duration-500" />
                 <div className="relative p-8 rounded-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 shadow-xl">
-                  <div className="absolute -top-5 -right-5 w-16 h-16 rounded-full bg-gradient-to-r from-blue-500 to-[#dfa628] flex items-center justify-center shadow-lg">
-                    <Target className="w-8 h-8 text-white" />
+                  <div className="absolute sm:-top-5 sm:-right-5 top-2 right-2 w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-r from-blue-500 to-[#dfa628] flex items-center justify-center shadow-lg">
+                    <Target className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold text-white mb-4">
                     Key Sectors
