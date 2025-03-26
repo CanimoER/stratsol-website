@@ -47,7 +47,7 @@ const projects: Project[] = [
     title: "Evaluation of the ACUDEN Recovery HUB",
     description: "A services contract to assess the impact of federal funds allocated under the Covid-19 response through the ACUDEN Recovery HUB project, identifying areas for improvement and optimizing resource allocation.",
     imageUrl: "/projects/recovery-hub.jpeg",
-    pdfUrl: "/pdfs/ACUDEN_Recovery_Hub_Evaluation.pdf"
+    pdfUrl: "/pdfs/ACUDEN_Recovery_HSE_Evaluation.pdf"
   },
   {
     id: 6,
@@ -103,7 +103,7 @@ const projects: Project[] = [
     title: "Early Childhood Recovery Programs Impact Report",
     description: "Un reporte preliminar elaborado por StratSol, Inc. para ACUDEN que detalla el uso e impacto de los fondos de recuperación (CARES, PECC, PAL y PIO) en el sector de cuidado infantil, evidenciando resultados en retención de empleados, mejoras en infraestructuras y apoyo a las familias.",
     imageUrl: "/projects/recovery-impact.jpeg",
-    pdfUrl: "/pdfs/recovery-programs-report.pdf"
+    pdfUrl: "/pdfs/recovery-impact-report.pdf"
   }
 ];
 
