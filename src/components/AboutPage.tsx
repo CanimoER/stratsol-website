@@ -205,17 +205,6 @@ const AboutPage = () => {
                   <p className="text-lg text-gray-400 leading-relaxed">
                     10+ years of experience in executive and legislative consulting, specializing in public policy analysis, project management, and federal funds compliance.
                   </p>
-                  <div className="flex gap-4">
-                    <a href="#" className="text-white hover:text-[#1e69ad] transition-colors">
-                      <Briefcase className="w-6 h-6" />
-                    </a>
-                    <a href="#" className="text-white hover:text-[#1e69ad] transition-colors">
-                      <Users className="w-6 h-6" />
-                    </a>
-                    <a href="#" className="text-white hover:text-[#1e69ad] transition-colors">
-                      <FileCheck className="w-6 h-6" />
-                    </a>
-                  </div>
                 </div>
               </div>
             </div>
