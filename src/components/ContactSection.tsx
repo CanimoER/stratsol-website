@@ -85,26 +85,14 @@ const ContactSection = ({
     setLoading(true);
     
     try {
-      const response = await fetch("/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-          "Accept": "application/json",
-        },
-        body: new URLSearchParams(Array.from(formData)).toString(),
+      // Let the native form submission handle it
+      form.submit();
+      
+      setFormErrors({});
+      toast({
+        title: "Message sent!",
+        description: "We'll get back to you soon.",
       });
-
-      if (response.ok) {
-        setFormErrors({});
-        form.reset();
-        toast({
-          title: "Message sent!",
-          description: "We'll get back to you soon.",
-        });
-      } else {
-        console.error("Form submission failed:", await response.text());
-        throw new Error("Form submission failed");
-      }
     } catch (error) {
       console.error("Form submission error:", error);
       toast({
@@ -176,8 +164,7 @@ const ContactSection = ({
               method="POST"
               data-netlify="true"
               netlify-honeypot="bot-field"
-              encType="application/x-www-form-urlencoded"
-              onSubmit={handleSubmit}
+              action="/"
               className="space-y-6"
             >
               <input type="hidden" name="form-name" value="stratsol-contact" />
