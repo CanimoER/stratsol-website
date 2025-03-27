@@ -1,0 +1,20 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Redirect form submissions to the success page
+[[redirects]]
+  from = "/success"
+  to = "/success.html"
+  status = 200
+
+# For SPA routing - all other routes go to index.html
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Set up form handling
+[forms]
+  [forms.stratsol-contact]
+    success_url = "/success" 

@@ -53,8 +53,8 @@ const ContactSection = () => {
             <form 
               name="stratsol-contact"
               method="POST"
-              action="/thank-you"
-              data-netlify="true"
+              action="/success"
+              data-netlify="true" 
               netlify-honeypot="bot-field"
               className="space-y-6"
             >
