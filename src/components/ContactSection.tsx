@@ -99,14 +99,21 @@ const ContactSection = ({
     setLoading(true);
     
     try {
-      const success = await onSubmit(sanitizedFormData);
-      if (success) {
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData as any).toString()
+      });
+
+      if (response.ok) {
         setFormErrors({});
         form.reset();
         toast({
           title: "Message sent!",
           description: "We'll get back to you soon.",
         });
+      } else {
+        throw new Error("Form submission failed");
       }
     } catch (error) {
       toast({
@@ -173,19 +180,19 @@ const ContactSection = ({
 
           {/* Form content */}
           <div className="relative p-8 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Honeypot field for bot protection */}
+            <form 
+              onSubmit={handleSubmit} 
+              className="space-y-6"
+              data-netlify="true"
+              name="stratsol-contact"
+              method="POST"
+              netlify-honeypot="bot-field"
+            >
+              <input type="hidden" name="form-name" value="stratsol-contact" />
+              
+              {/* Netlify's honeypot field */}
               <div className="opacity-0 absolute top-0 left-0 h-0 w-0 -z-10 overflow-hidden">
-                <label htmlFor="website">Website</label>
-                <input 
-                  type="text" 
-                  id="website" 
-                  name="website" 
-                  tabIndex={-1}
-                  autoComplete="off"
-                  value={honeypot}
-                  onChange={(e) => setHoneypot(e.target.value)}
-                />
+                <label>Don't fill this out if you're human: <input name="bot-field" /></label>
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
