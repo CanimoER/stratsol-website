@@ -86,23 +86,15 @@ const ContactSection = ({
       return;
     }
     
-    // Sanitize inputs
-    const sanitizedFormData = new FormData();
-    formData.forEach((value, key) => {
-      if (typeof value === 'string') {
-        sanitizedFormData.append(key, sanitizeInput(value));
-      } else {
-        sanitizedFormData.append(key, value);
-      }
-    });
-    
     setLoading(true);
     
     try {
       const response = await fetch("/", {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData as any).toString()
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams([...formData.entries()] as [string, string][]).toString(),
       });
 
       if (response.ok) {
@@ -116,6 +108,7 @@ const ContactSection = ({
         throw new Error("Form submission failed");
       }
     } catch (error) {
+      console.error("Form submission error:", error);
       toast({
         variant: "destructive",
         title: "Error",
@@ -181,12 +174,12 @@ const ContactSection = ({
           {/* Form content */}
           <div className="relative p-8 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm">
             <form 
-              onSubmit={handleSubmit} 
-              className="space-y-6"
-              data-netlify="true"
               name="stratsol-contact"
               method="POST"
+              data-netlify="true"
               netlify-honeypot="bot-field"
+              onSubmit={handleSubmit}
+              className="space-y-6"
             >
               <input type="hidden" name="form-name" value="stratsol-contact" />
               
