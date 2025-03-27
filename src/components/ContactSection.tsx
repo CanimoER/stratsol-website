@@ -71,10 +71,6 @@ const ContactSection = ({
     // Check honeypot (bot protection)
     if (honeypot) {
       console.log("Bot detected");
-      toast({
-        title: "Message sent!",
-        description: "We'll get back to you soon.",
-      });
       return;
     }
     
@@ -93,8 +89,9 @@ const ContactSection = ({
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
+          "Accept": "application/json",
         },
-        body: new URLSearchParams([...formData.entries()] as [string, string][]).toString(),
+        body: new URLSearchParams(Array.from(formData)).toString(),
       });
 
       if (response.ok) {
@@ -105,6 +102,7 @@ const ContactSection = ({
           description: "We'll get back to you soon.",
         });
       } else {
+        console.error("Form submission failed:", await response.text());
         throw new Error("Form submission failed");
       }
     } catch (error) {
@@ -178,6 +176,7 @@ const ContactSection = ({
               method="POST"
               data-netlify="true"
               netlify-honeypot="bot-field"
+              encType="application/x-www-form-urlencoded"
               onSubmit={handleSubmit}
               className="space-y-6"
             >
