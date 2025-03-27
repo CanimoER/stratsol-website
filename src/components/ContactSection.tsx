@@ -173,7 +173,6 @@ const ContactSection = ({
               data-netlify="true"
               netlify-honeypot="bot-field"
               action="/thank-you"
-              onSubmit={handleSubmit}
               className="space-y-6"
             >
               <input type="hidden" name="form-name" value="stratsol-contact" />
