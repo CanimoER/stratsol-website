@@ -19,29 +19,29 @@ interface TestimonialsSectionProps {
 const defaultTestimonials: Testimonial[] = [
   {
     id: 1,
-    name: "María Rivera",
-    role: "Director",
+    name: "",
+    role: "",
     company: "ACUDEN",
-    content: "StratSol ha sido instrumental en la transformación de nuestros programas de cuidado infantil. Su análisis detallado y recomendaciones estratégicas han mejorado significativamente nuestros servicios.",
+    content: "La colaboración con StratSol ha fortalecido nuestras capacidades estratégicas y operativas. Su enfoque riguroso y asesoramiento especializado han sido decisivos para la planificación y evaluación de programas críticos, beneficiando a la niñez y a las familias de Puerto Rico.",
     logo: "/images/logos/futuro-logo.png",
     rating: 5,
   },
   {
     id: 2,
-    name: "Carlos Rodríguez",
-    role: "Executive Director",
-    company: "Comisión para la Seguridad en el Tránsito",
-    content: "The traffic safety survey study conducted by StratSol provided invaluable insights for our campaigns. Their data-driven approach and thorough analysis exceeded our expectations.",
-    logo: "/images/logos/cst-logo.png",
+    name: "",
+    role: "",
+    company: "ASSMCA",
+    content: "La experiencia comprobada de StratSol en proyectos similares y su compromiso con la mejora continua han marcado una diferencia notable en nuestros procesos. Estamos convencidos de que su metodología y recursos son clave para optimizar nuestros servicios.",
+    logo: "/images/logos/ASSMCA.png",
     rating: 5,
   },
   {
     id: 3,
-    name: "Ana Méndez",
-    role: "Program Manager",
-    company: "Head Start Program",
-    content: "El estudio de necesidades comunitarias realizado por StratSol nos permitió identificar áreas críticas de mejora y optimizar la distribución de recursos para mejor servir a nuestras comunidades.",
-    logo: "/images/logos/head-start-logo.png",
+    name: "",
+    role: "",
+    company: "OGP",
+    content: "En nuestra búsqueda de soluciones integrales para enfrentar desafíos en planificación, análisis de datos y gestión de proyectos, confiamos plenamente en StratSol. Su capacidad técnica y experiencia han sido fundamentales para asegurar el éxito de nuestros procesos.",
+    logo: "/images/logos/OGP.png",
     rating: 5,
   }
 ];
@@ -92,11 +92,11 @@ const TestimonialsSection = ({
               <div className="absolute -inset-2 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-xl opacity-0 group-hover:opacity-100 blur-lg transition-opacity duration-500" />
               <div className="relative p-8 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm">
                 {/* Organization Logo */}
-                <div className="h-16 mb-6 flex items-center justify-center">
+                <div className="h-24 mb-6 flex items-center justify-center bg-white/25 rounded-lg px-8 py-4 shadow-lg">
                   <img
                     src={testimonial.logo}
                     alt={`${testimonial.company} logo`}
-                    className="max-h-full w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
+                    className="h-full w-auto object-contain opacity-100 transition-transform hover:scale-105 duration-300"
                   />
                 </div>
                 
@@ -117,10 +117,7 @@ const TestimonialsSection = ({
 
                 {/* Author */}
                 <div className="text-center">
-                  <div className="font-semibold text-white">{testimonial.name}</div>
-                  <div className="text-sm text-gray-400">
-                    {testimonial.role} at {testimonial.company}
-                  </div>
+                  <div className="font-semibold text-white">{testimonial.company}</div>
                 </div>
               </div>
             </motion.div>
