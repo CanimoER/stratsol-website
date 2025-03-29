@@ -17,28 +17,17 @@ const ContactPage = () => {
     setSubmitting(true);
     setError("");
 
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-
     try {
-      // This is how Netlify expects the form submission
-      const response = await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData as any).toString()
-      });
-
-      if (response.ok) {
-        setSuccess(true);
-        form.reset();
-      } else {
-        setError("Something went wrong. Please try again.");
-        console.error("Form submission failed:", response.statusText);
-      }
+      // Let Netlify handle the form submission natively
+      const form = e.currentTarget;
+      form.submit();
+      
+      // We won't reach here since the page will navigate away
+      // This is just as a fallback
+      setSuccess(true);
     } catch (err) {
-      setError("Network error. Please try again.");
       console.error("Form submission error:", err);
-    } finally {
+      setError("Something went wrong. Please try again.");
       setSubmitting(false);
     }
   };
@@ -106,20 +95,21 @@ const ContactPage = () => {
                 </div>
               ) : (
                 <form 
-                  name="stratsol-contact"
+                  name="contact"
                   method="POST"
+                  action="/thank-you"
                   data-netlify="true" 
                   netlify-honeypot="bot-field"
                   className="space-y-6"
                   onSubmit={handleSubmit}
                 >
-                  <input type="hidden" name="form-name" value="stratsol-contact" />
+                  <input type="hidden" name="form-name" value="contact" />
                   
-                  {/* Netlify's honeypot field */}
+                  {/* Honeypot field for spam protection */}
                   <div className="opacity-0 absolute top-0 left-0 h-0 w-0 -z-10 overflow-hidden">
                     <label>Don't fill this out if you're human: <input name="bot-field" /></label>
                   </div>
-
+                  
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <Label htmlFor="firstName" className="text-white">
