@@ -8,25 +8,13 @@
   </head>
   <body>
     <!-- A hidden form for Netlify - DO NOT REMOVE -->
-    <form name="stratsol-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+    <form name="stratsol-contact" netlify netlify-honeypot="bot-field" hidden>
       <input type="hidden" name="form-name" value="stratsol-contact" />
       <input type="text" name="firstName" />
       <input type="text" name="lastName" />
       <input type="text" name="organization" />
-      <select name="sector">
-        <option value=""></option>
-        <option value="public">Public Sector</option>
-        <option value="private">Private Sector</option>
-        <option value="nonprofit">Non-Profit</option>
-      </select>
-      <select name="serviceType">
-        <option value=""></option>
-        <option value="strategic">Strategic Planning & Development</option>
-        <option value="research">Research & Analysis</option>
-        <option value="consulting">Management Consulting</option>
-        <option value="advisory">Advisory Services</option>
-        <option value="other">Other Services</option>
-      </select>
+      <select name="sector"></select>
+      <select name="serviceType"></select>
       <input type="email" name="email" />
       <textarea name="message"></textarea>
       <input name="bot-field" />
