@@ -6,4 +6,8 @@
 [[redirects]]
   from = "/*"
   to = "/index.html"
-  status = 200 
+  status = 200
+
+# Explicitly enable form detection
+[build.processing]
+  skip_processing = false 

@@ -19,11 +19,20 @@ const ContactSection = () => {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(formData as any).toString(),
     })
-      .then(() => {
-        setFormSubmitted(true);
-        form.reset();
+      .then(response => {
+        console.log("Form submission response:", response);
+        if (response.ok) {
+          setFormSubmitted(true);
+          form.reset();
+        } else {
+          console.error("Form submission failed:", response.statusText);
+          throw new Error(`Form submission failed: ${response.statusText}`);
+        }
       })
-      .catch((error) => console.error(error));
+      .catch((error) => {
+        console.error("Form submission error:", error);
+        alert("There was a problem submitting your form. Please try again.");
+      });
   };
 
   return (
@@ -87,6 +96,7 @@ const ContactSection = () => {
                 name="stratsol-contact"
                 method="POST"
                 data-netlify="true" 
+                data-netlify-site="${process.env.NETLIFY_SITE_ID || ''}"
                 netlify-honeypot="bot-field"
                 className="space-y-6"
                 onSubmit={handleSubmit}
