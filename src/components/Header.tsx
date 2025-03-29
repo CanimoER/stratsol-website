@@ -44,16 +44,16 @@ const Header = ({
       href: "/about",
     },
     {
-      title: "Contact",
-      href: "/contact",
-    },
-    {
       title: "Services",
       href: "#services",
     },
     {
       title: "Testimonials",
       href: "#testimonials",
+    },
+    {
+      title: "Contact",
+      href: "#contact",
     },
   ],
 }: HeaderProps) => {
@@ -189,10 +189,10 @@ const Header = ({
               onClick={() => {
                 const currentPath = window.location.pathname;
                 if (isHomePage(currentPath)) {
-                  const contactSection = document.getElementById("contact-section");
+                  const contactSection = document.getElementById("contact");
                   contactSection?.scrollIntoView({ behavior: "smooth" });
                 } else {
-                  sessionStorage.setItem("scrollTarget", "contact-section");
+                  sessionStorage.setItem("scrollTarget", "contact");
                   window.location.href = "/";
                 }
               }}
