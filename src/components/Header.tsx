@@ -44,6 +44,10 @@ const Header = ({
       href: "/about",
     },
     {
+      title: "Contact",
+      href: "/contact",
+    },
+    {
       title: "Services",
       href: "#services",
     },

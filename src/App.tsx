@@ -8,6 +8,7 @@ import { LoadingSpinner } from "./components/ui/loading-spinner";
 import ErrorBoundary from "./components/ui/ErrorBoundary";
 import ScrollToTop from "./components/ScrollToTop";
 import ThankYou from "./pages/thank-you";
+import ContactPage from "./pages/Contact";
 import routes from "tempo-routes";
 
 function App() {
@@ -25,6 +26,8 @@ function App() {
             <Route path="/preview/in/projects" element={<ProjectsPage />} />
             <Route path="/thank-you" element={<ThankYou />} />
             <Route path="/preview/in/thank-you" element={<ThankYou />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/preview/in/contact" element={<ContactPage />} />
           </Routes>
           {import.meta.env.VITE_TEMPO === "true" && useRoutes(routes)}
         </ErrorBoundary>
