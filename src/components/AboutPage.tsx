@@ -1,7 +1,8 @@
 import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Header from "./Header";
-import { Users, Target, Award, Briefcase, FileCheck, Brain, BarChart, DollarSign, GraduationCap, LineChart, Users2 } from "lucide-react";
+import { Users, Target, Award, Briefcase, FileCheck, Brain, BarChart, DollarSign, GraduationCap, LineChart, Users2, MapPin, Clock } from "lucide-react";
+import { Button } from "./ui/button";
 
 const AboutPage = () => {
   const { scrollYProgress } = useScroll();
@@ -326,55 +327,94 @@ const AboutPage = () => {
         </div>
 
         {/* Location Section */}
-        <div className="mt-24">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl font-bold text-white mb-4">Visit Us</h2>
-            <p className="text-xl text-gray-400">
-              First Federal Building, 1519 Av. de la Constitución, San Juan,
-              00912
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            className="relative w-full h-[400px] rounded-xl overflow-hidden"
-          >
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.0897726098074!2d-66.10547792412868!3d18.45161798744271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c036f5c190d7acb%3A0x8c4e0ba5da43d0d0!2sFirst%20Federal%20Building%2C%201519%20Av.%20Constituci%C3%B3n%2C%20San%20Juan%2C%2000912%2C%20Puerto%20Rico!5e0!3m2!1sen!2sus!4v1709598844037!5m2!1sen!2sus"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="filter grayscale hover:grayscale-0 transition-all duration-300"
-            />
-          </motion.div>
+        <div className="mt-24 relative">
+          {/* Decorative background elements */}
+          <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-24 h-24 md:w-32 md:h-32 rounded-full bg-purple-500/10 blur-2xl"></div>
+            <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-24 h-24 md:w-32 md:h-32 rounded-full bg-blue-500/10 blur-2xl"></div>
+            <div className="absolute left-1/4 bottom-0 w-64 h-64 rounded-full bg-yellow-500/5 blur-3xl"></div>
+            <div className="absolute right-1/4 top-0 w-64 h-64 rounded-full bg-teal-500/5 blur-3xl"></div>
+          </div>
+          
+          <div className="relative max-w-4xl mx-auto px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-3xl font-bold text-white mb-6">Visit Us</h2>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 shadow-lg"
+            >
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div className="space-y-6">
+                  <div className="flex items-start space-x-4">
+                    <div className="flex-shrink-0 p-3 rounded-full bg-purple-500/10">
+                      <MapPin className="w-6 h-6 text-purple-400" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold text-white mb-2">Our Location</h3>
+                      <p className="text-gray-400 leading-relaxed">
+                        First Federal Building<br />
+                        1519 Av. de la Constitución<br />
+                        San Juan, PR 00912
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start space-x-4">
+                    <div className="flex-shrink-0 p-3 rounded-full bg-blue-500/10">
+                      <Clock className="w-6 h-6 text-blue-400" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold text-white mb-2">Business Hours</h3>
+                      <p className="text-gray-400 leading-relaxed">
+                        Monday - Friday<br />
+                        9:00 AM - 5:00 PM
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <Button 
+                    onClick={() => window.open('https://maps.google.com/?q=First+Federal+Building+1519+Av+de+la+Constitucion+San+Juan+PR+00912')}
+                    className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-medium px-6 py-4 rounded-xl flex items-center justify-center space-x-2"
+                  >
+                    <MapPin className="w-5 h-5" />
+                    <span>Get Directions</span>
+                  </Button>
+                </div>
+                
+                <div className="relative aspect-square rounded-xl overflow-hidden bg-gray-800 border border-white/10">
+                  <div className="absolute inset-0 bg-[url('/images/map-background.svg')] opacity-40 bg-center bg-cover"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-900/40 via-transparent to-blue-900/40"></div>
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                    <div className="relative">
+                      <div className="absolute animate-ping w-6 h-6 rounded-full bg-purple-500/30"></div>
+                      <div className="relative w-5 h-5 rounded-full bg-purple-600 flex items-center justify-center">
+                        <div className="w-2 h-2 rounded-full bg-white"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </main>
 
-      <footer className="bg-gray-900 text-white py-8">
+      <footer className="bg-gray-900 text-white py-6">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-            {/* Company Info */}
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold mb-4">StratSol</h3>
-              <p className="text-sm text-gray-400">
-                A distinguished multidisciplinary consulting firm established in 2016.
-              </p>
-            </div>
-
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 max-w-2xl mx-auto">
             {/* Contact Info */}
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold mb-4">Visit Us</h3>
-              <div className="space-y-2 text-sm text-gray-400">
+            <div className="space-y-3">
+              <h3 className="text-base font-semibold mb-3">Visit Us</h3>
+              <div className="space-y-1 text-xs text-gray-400">
                 <p>First Federal Building</p>
                 <p>1519 Av. de la Constitución</p>
                 <p>San Juan, PR 00912</p>
@@ -382,19 +422,19 @@ const AboutPage = () => {
             </div>
 
             {/* Essential Links */}
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-              <div className="space-y-2">
-                <a href="/" className="block text-sm text-gray-400 hover:text-white">Home</a>
-                <a href="/projects" className="block text-sm text-gray-400 hover:text-white">Projects</a>
-                <a href="/about" className="block text-sm text-gray-400 hover:text-white">About</a>
-                <a href="#contact" className="block text-sm text-gray-400 hover:text-white">Contact</a>
+            <div className="space-y-3">
+              <h3 className="text-base font-semibold mb-3">Quick Links</h3>
+              <div className="space-y-1">
+                <a href="/" className="block text-xs text-gray-400 hover:text-white">Home</a>
+                <a href="/projects" className="block text-xs text-gray-400 hover:text-white">Projects</a>
+                <a href="/about" className="block text-xs text-gray-400 hover:text-white">About</a>
+                <a href="#contact" className="block text-xs text-gray-400 hover:text-white">Contact</a>
               </div>
             </div>
           </div>
 
-          <div className="border-t border-gray-800 pt-8 text-center">
-            <p className="text-sm text-gray-400">
+          <div className="border-t border-gray-800 pt-4 text-center">
+            <p className="text-xs text-gray-400">
               © {new Date().getFullYear()} StratSol. All rights reserved.
             </p>
           </div>

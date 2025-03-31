@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800px" height="800px" viewBox="0 0 800 800" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <!-- Map Grid lines -->
+        <g stroke="#FFFFFF" stroke-width="1" opacity="0.15">
+            <!-- Horizontal lines -->
+            <line x1="0" y1="50" x2="800" y2="50"></line>
+            <line x1="0" y1="100" x2="800" y2="100"></line>
+            <line x1="0" y1="150" x2="800" y2="150"></line>
+            <line x1="0" y1="200" x2="800" y2="200"></line>
+            <line x1="0" y1="250" x2="800" y2="250"></line>
+            <line x1="0" y1="300" x2="800" y2="300"></line>
+            <line x1="0" y1="350" x2="800" y2="350"></line>
+            <line x1="0" y1="400" x2="800" y2="400"></line>
+            <line x1="0" y1="450" x2="800" y2="450"></line>
+            <line x1="0" y1="500" x2="800" y2="500"></line>
+            <line x1="0" y1="550" x2="800" y2="550"></line>
+            <line x1="0" y1="600" x2="800" y2="600"></line>
+            <line x1="0" y1="650" x2="800" y2="650"></line>
+            <line x1="0" y1="700" x2="800" y2="700"></line>
+            <line x1="0" y1="750" x2="800" y2="750"></line>
+            
+            <!-- Vertical lines -->
+            <line x1="50" y1="0" x2="50" y2="800"></line>
+            <line x1="100" y1="0" x2="100" y2="800"></line>
+            <line x1="150" y1="0" x2="150" y2="800"></line>
+            <line x1="200" y1="0" x2="200" y2="800"></line>
+            <line x1="250" y1="0" x2="250" y2="800"></line>
+            <line x1="300" y1="0" x2="300" y2="800"></line>
+            <line x1="350" y1="0" x2="350" y2="800"></line>
+            <line x1="400" y1="0" x2="400" y2="800"></line>
+            <line x1="450" y1="0" x2="450" y2="800"></line>
+            <line x1="500" y1="0" x2="500" y2="800"></line>
+            <line x1="550" y1="0" x2="550" y2="800"></line>
+            <line x1="600" y1="0" x2="600" y2="800"></line>
+            <line x1="650" y1="0" x2="650" y2="800"></line>
+            <line x1="700" y1="0" x2="700" y2="800"></line>
+            <line x1="750" y1="0" x2="750" y2="800"></line>
+        </g>
+        
+        <!-- Map Features -->
+        <g stroke="#FFFFFF" stroke-width="2" opacity="0.2">
+            <!-- Main roads -->
+            <path d="M200,200 L600,200 L600,600 L200,600 Z" stroke-linecap="round"></path>
+            <path d="M300,300 L500,300 L500,500 L300,500 Z" stroke-linecap="round"></path>
+            <path d="M200,400 L300,400" stroke-linecap="round"></path>
+            <path d="M500,400 L600,400" stroke-linecap="round"></path>
+            <path d="M400,200 L400,300" stroke-linecap="round"></path>
+            <path d="M400,500 L400,600" stroke-linecap="round"></path>
+            
+            <!-- Curved roads -->
+            <path d="M150,350 C180,300 220,250 250,200" stroke-linecap="round"></path>
+            <path d="M550,200 C600,250 650,300 700,350" stroke-linecap="round"></path>
+            <path d="M150,450 C180,500 220,550 250,600" stroke-linecap="round"></path>
+            <path d="M550,600 C600,550 650,500 700,450" stroke-linecap="round"></path>
+        </g>
+        
+        <!-- Points of Interest -->
+        <g fill="#FFFFFF" opacity="0.3">
+            <circle cx="400" cy="400" r="8"></circle>
+            <circle cx="300" cy="300" r="4"></circle>
+            <circle cx="300" cy="500" r="4"></circle>
+            <circle cx="500" cy="300" r="4"></circle>
+            <circle cx="500" cy="500" r="4"></circle>
+        </g>
+    </g>
+</svg> 
