@@ -87,21 +87,21 @@ const projects: Project[] = [
   {
     id: 11,
     title: "Child Care Program Needs Assessment Study",
-    description: "Un estudio realizado por StratSol, Inc. para ACUDEN que identifica y prioriza las necesidades críticas en los servicios de cuidado infantil en Puerto Rico, estableciendo una base para mejoras en calidad y eficiencia.",
+    description: "A study conducted by StratSol, Inc. for ACUDEN that identifies and prioritizes critical needs in Puerto Rico's childcare services, establishing a foundation for quality and efficiency improvements.",
     imageUrl: "/projects/childcare-needs.jpeg",
     pdfUrl: "/pdfs/childcare-needs-assessment.pdf"
   },
   {
     id: 12,
     title: "Child Care Services Gap Analysis",
-    description: "Un informe analítico que examina las áreas desiertas y brechas de cobertura en el programa Child Care, destacando oportunidades para ampliar el acceso y atender mejor a la niñez temprana.",
+    description: "An analytical report that examines underserved areas and coverage gaps in the Child Care program, highlighting opportunities to expand access and better serve early childhood.",
     imageUrl: "/projects/childcare-gap.jpeg",
     pdfUrl: "/pdfs/childcare-gap-analysis.pdf"
   },
   {
     id: 13,
     title: "Early Childhood Recovery Programs Impact Report",
-    description: "Un reporte preliminar elaborado por StratSol, Inc. para ACUDEN que detalla el uso e impacto de los fondos de recuperación (CARES, PECC, PAL y PIO) en el sector de cuidado infantil, evidenciando resultados en retención de empleados, mejoras en infraestructuras y apoyo a las familias.",
+    description: "A preliminary report prepared by StratSol, Inc. for ACUDEN that details the use and impact of recovery funds (CARES, PECC, PAL, and PIO) in the childcare sector, showing results in employee retention, infrastructure improvements, and family support.",
     imageUrl: "/projects/recovery-impact.jpeg",
     pdfUrl: "/pdfs/recovery-impact-report.pdf"
   }
