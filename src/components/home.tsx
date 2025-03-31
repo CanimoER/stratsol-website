@@ -59,30 +59,30 @@ const Home = () => {
 
       <footer className="bg-gray-900 text-white py-6">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 max-w-2xl mx-auto">
-            {/* Contact Info */}
-            <div className="space-y-3">
-              <h3 className="text-base font-semibold mb-3">Visit Us</h3>
-              <div className="space-y-1 text-xs text-gray-400">
+          <div className="flex flex-col md:flex-row justify-end space-y-4 md:space-y-0 md:space-x-8 mb-6">
+            {/* Visit Us */}
+            <div className="text-right">
+              <h3 className="text-base font-semibold mb-2">Visit Us</h3>
+              <div className="text-xs text-gray-400">
                 <p>First Federal Building</p>
                 <p>1519 Av. de la Constitución</p>
                 <p>San Juan, PR 00912</p>
               </div>
             </div>
 
-            {/* Essential Links */}
-            <div className="space-y-3">
-              <h3 className="text-base font-semibold mb-3">Quick Links</h3>
-              <div className="space-y-1">
-                <a href="/" className="block text-xs text-gray-400 hover:text-white">Home</a>
-                <a href="/projects" className="block text-xs text-gray-400 hover:text-white">Projects</a>
-                <a href="/about" className="block text-xs text-gray-400 hover:text-white">About</a>
-                <a href="#contact" className="block text-xs text-gray-400 hover:text-white">Contact</a>
+            {/* Quick Links */}
+            <div className="text-right">
+              <h3 className="text-base font-semibold mb-2">Quick Links</h3>
+              <div className="flex flex-col items-end">
+                <a href="/" className="text-xs text-gray-400 hover:text-white mb-1">Home</a>
+                <a href="/projects" className="text-xs text-gray-400 hover:text-white mb-1">Projects</a>
+                <a href="/about" className="text-xs text-gray-400 hover:text-white mb-1">About</a>
+                <a href="#contact" className="text-xs text-gray-400 hover:text-white">Contact</a>
               </div>
             </div>
           </div>
 
-          <div className="border-t border-gray-800 pt-4 text-center">
+          <div className="border-t border-gray-800 pt-4 text-right">
             <p className="text-xs text-gray-400">
               © {new Date().getFullYear()} StratSol. All rights reserved.
             </p>

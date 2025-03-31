@@ -391,16 +391,17 @@ const AboutPage = () => {
                 </div>
                 
                 <div className="relative aspect-square rounded-xl overflow-hidden bg-gray-800 border border-white/10">
-                  <div className="absolute inset-0 bg-[url('/images/map-background.svg')] opacity-40 bg-center bg-cover"></div>
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-900/40 via-transparent to-blue-900/40"></div>
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                    <div className="relative">
-                      <div className="absolute animate-ping w-6 h-6 rounded-full bg-purple-500/30"></div>
-                      <div className="relative w-5 h-5 rounded-full bg-purple-600 flex items-center justify-center">
-                        <div className="w-2 h-2 rounded-full bg-white"></div>
-                      </div>
-                    </div>
-                  </div>
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.0897726098074!2d-66.10547792412868!3d18.45161798744271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c036f5c190d7acb%3A0x8c4e0ba5da43d0d0!2sFirst%20Federal%20Building%2C%201519%20Av.%20Constituci%C3%B3n%2C%20San%20Juan%2C%2000912%2C%20Puerto%20Rico!5e0!3m2!1sen!2sus!4v1709598844037!5m2!1sen!2sus"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="absolute inset-0 w-full h-full"
+                  />
+                  <div className="absolute inset-0 pointer-events-none border border-white/10 rounded-xl z-10"></div>
                 </div>
               </div>
             </motion.div>
@@ -410,30 +411,30 @@ const AboutPage = () => {
 
       <footer className="bg-gray-900 text-white py-6">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 max-w-2xl mx-auto">
-            {/* Contact Info */}
-            <div className="space-y-3">
-              <h3 className="text-base font-semibold mb-3">Visit Us</h3>
-              <div className="space-y-1 text-xs text-gray-400">
+          <div className="flex flex-col md:flex-row justify-end space-y-4 md:space-y-0 md:space-x-8 mb-6">
+            {/* Visit Us */}
+            <div className="text-right">
+              <h3 className="text-base font-semibold mb-2">Visit Us</h3>
+              <div className="text-xs text-gray-400">
                 <p>First Federal Building</p>
                 <p>1519 Av. de la Constitución</p>
                 <p>San Juan, PR 00912</p>
               </div>
             </div>
 
-            {/* Essential Links */}
-            <div className="space-y-3">
-              <h3 className="text-base font-semibold mb-3">Quick Links</h3>
-              <div className="space-y-1">
-                <a href="/" className="block text-xs text-gray-400 hover:text-white">Home</a>
-                <a href="/projects" className="block text-xs text-gray-400 hover:text-white">Projects</a>
-                <a href="/about" className="block text-xs text-gray-400 hover:text-white">About</a>
-                <a href="#contact" className="block text-xs text-gray-400 hover:text-white">Contact</a>
+            {/* Quick Links */}
+            <div className="text-right">
+              <h3 className="text-base font-semibold mb-2">Quick Links</h3>
+              <div className="flex flex-col items-end">
+                <a href="/" className="text-xs text-gray-400 hover:text-white mb-1">Home</a>
+                <a href="/projects" className="text-xs text-gray-400 hover:text-white mb-1">Projects</a>
+                <a href="/about" className="text-xs text-gray-400 hover:text-white mb-1">About</a>
+                <a href="#contact" className="text-xs text-gray-400 hover:text-white">Contact</a>
               </div>
             </div>
           </div>
 
-          <div className="border-t border-gray-800 pt-4 text-center">
+          <div className="border-t border-gray-800 pt-4 text-right">
             <p className="text-xs text-gray-400">
               © {new Date().getFullYear()} StratSol. All rights reserved.
             </p>
