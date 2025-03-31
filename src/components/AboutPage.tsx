@@ -409,13 +409,13 @@ const AboutPage = () => {
         </div>
       </main>
 
-      <footer className="bg-gray-900 text-white py-6">
+      <footer className="bg-gray-900 text-white py-4">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-end space-y-4 md:space-y-0 md:space-x-8 mb-6">
+          <div className="flex flex-col md:flex-row justify-end space-y-3 md:space-y-0 md:space-x-6 mb-4">
             {/* Visit Us */}
             <div className="text-right">
-              <h3 className="text-base font-semibold mb-2">Visit Us</h3>
-              <div className="text-xs text-gray-400">
+              <h3 className="text-sm font-semibold mb-1">Visit Us</h3>
+              <div className="text-xs text-gray-400 space-y-0.5">
                 <p>First Federal Building</p>
                 <p>1519 Av. de la Constitución</p>
                 <p>San Juan, PR 00912</p>
@@ -424,17 +424,17 @@ const AboutPage = () => {
 
             {/* Quick Links */}
             <div className="text-right">
-              <h3 className="text-base font-semibold mb-2">Quick Links</h3>
-              <div className="flex flex-col items-end">
-                <a href="/" className="text-xs text-gray-400 hover:text-white mb-1">Home</a>
-                <a href="/projects" className="text-xs text-gray-400 hover:text-white mb-1">Projects</a>
-                <a href="/about" className="text-xs text-gray-400 hover:text-white mb-1">About</a>
+              <h3 className="text-sm font-semibold mb-1">Quick Links</h3>
+              <div className="flex flex-col items-end space-y-0.5">
+                <a href="/" className="text-xs text-gray-400 hover:text-white">Home</a>
+                <a href="/projects" className="text-xs text-gray-400 hover:text-white">Projects</a>
+                <a href="/about" className="text-xs text-gray-400 hover:text-white">About</a>
                 <a href="#contact" className="text-xs text-gray-400 hover:text-white">Contact</a>
               </div>
             </div>
           </div>
 
-          <div className="border-t border-gray-800 pt-4 text-right">
+          <div className="border-t border-gray-800 pt-3 text-right">
             <p className="text-xs text-gray-400">
               © {new Date().getFullYear()} StratSol. All rights reserved.
             </p>
